@@ -162,7 +162,3 @@ cython_debug/
 #.idea/
 
 
-# Large files
-credit/RandomForestClassifier1.joblib
-fraud/fraud_clean.csv
-myvenv/
