@@ -4,8 +4,8 @@ from sklearn.preprocessing import StandardScaler
 from joblib import load
 
 # Load the saved RandomForestClassifier model
-model = load("C:/Users/akash s ranjan/Downloads/bankproject/credit/RandomForestClassifier1.joblib")
-df = pd.read_csv("C:/Users/akash s ranjan/Downloads/bankproject/credit/credit_risk_cleaned.csv")
+model = load("credit/RandomForestClassifier1.joblib")
+df = pd.read_csv("credit/credit_risk_cleaned.csv")
 # Load the scaler used for data preprocessing
 scaler = StandardScaler()
 

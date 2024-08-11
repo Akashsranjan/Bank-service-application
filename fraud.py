@@ -3,7 +3,7 @@ import pandas as pd
 from joblib import load
 
 # Load the trained model
-loaded_gb_clf = load('C:/Users/akash s ranjan/Downloads/bankproject/fraud/gbclassifier.joblib')
+loaded_gb_clf = load('fraud/gbclassifier.joblib')
 
 # Function to make predictions
 def predict(input_data):

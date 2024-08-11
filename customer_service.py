@@ -14,13 +14,16 @@ nltk.download('wordnet')
 
 # Load the trained model and other required data
 lemmatizer = WordNetLemmatizer()
-intents_path = r"C:/Users/akash s ranjan/Downloads/bankproject/customer_service/intents.json"
+intents_path = r"customer_service/intents.json"
 with open(intents_path, encoding="utf-8") as file:
     intents = json.load(file)
 
-words = pickle.load(open('C:/Users/akash s ranjan/Downloads/bankproject/customer_service/words.pkl', 'rb'))
-classes = pickle.load(open('C:/Users/akash s ranjan/Downloads/bankproject/customer_service/classes.pkl', 'rb'))
-model = load_model('C:/Users/akash s ranjan/Downloads/bankproject/customer_service/chatbot_model.h5')
+words_path = "customer_service/words.pkl"
+classes_path = "customer_service/classes.pkl"
+model_path = "customer_service/chatbot_model.h5"
+words = pickle.load(open(words_path, 'rb'))
+classes = pickle.load(open(classes_path, 'rb'))
+model = load_model(model_path)
 
 
 # Define text preprocessing functions

@@ -1,10 +1,23 @@
-FROM python:3.11-slim-buster
+# Use a lightweight Python 3.11 base image
+FROM python:3.11-slim
 
+# Create a working directory for the app
 WORKDIR /app
-COPY . /app
 
-RUN apt update -y && apt install awscli -y
+# Copy requirements.txt (ensure it exists)
+COPY requirements.txt .
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 unzip -y && pip install -r requirements.txt
+# Copy the CSV file into the container
+COPY credit/credit_risk_cleaned.csv /app/credit/credit_risk_cleaned.csv
 
-CMD ["python3", "app.py"]
+# Install dependencies within the container
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire project directory
+COPY . .
+
+# Expose Streamlit port (default: 8501)
+EXPOSE 8501
+
+# Set the command to run your app
+CMD ["streamlit", "run", "main.py"]
